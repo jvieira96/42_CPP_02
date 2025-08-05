@@ -6,7 +6,7 @@
 /*   By: jpedro-f <jpedro-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 13:50:23 by jpedro-f          #+#    #+#             */
-/*   Updated: 2025/08/05 18:24:07 by jpedro-f         ###   ########.fr       */
+/*   Updated: 2025/08/05 20:35:41 by jpedro-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Fixed::Fixed(const float float_nbr) : _fixednbr(roundf(float_nbr * (1 << _fracbi
 	std::cout << "Float constructor called" << std::endl;
 }
 
-float Fixed::toFLoat(void) const {
+float Fixed::toFloat(void) const {
 	return (static_cast<float>(_fixednbr) / (1 << _fracbits));
 }
 
@@ -60,6 +60,6 @@ int Fixed::toInt(void) const {
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
-	out << fixed.toFLoat();
+	out << fixed.toFloat();
 	return out;
 }
